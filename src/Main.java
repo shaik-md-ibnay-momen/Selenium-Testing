@@ -20,6 +20,7 @@ public class Main {
         driver.findElement(By.xpath("/html/body/form/table/tbody/tr[2]/td[2]/input")).sendKeys("ebEZAqy");
         driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td[2]/input[1]")).click();
         System.out.println("Hello, World!");
+
         menu();
         System.out.println("Hello, World!");
     }
