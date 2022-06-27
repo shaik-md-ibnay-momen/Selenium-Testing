@@ -7,16 +7,15 @@ public class Main {
     public static void driver() {
         System.setProperty("webdriver.chrome.driver", "F:\\Selenium\\Selenium Testing\\Selenium Jar & Drivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
-        link();
     }
 
-    static void link(){
+    static void browser_link(){
         driver.manage().window().maximize();
         driver.get("https://www.google.com/");
     }
 
     public static void main(String[] args) {
         driver();
-
+        browser_link();
     }
 }
