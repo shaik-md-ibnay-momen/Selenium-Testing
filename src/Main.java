@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class Main {
     private static WebDriver driver;
@@ -15,25 +17,28 @@ public class Main {
         driver.get("https://demo.guru99.com/v4/index.php");
     }
 
-    static void login(){
+    static void login()  {
         driver.findElement(By.xpath("/html/body/form/table/tbody/tr[1]/td[2]/input")).sendKeys("mngr419643");
         driver.findElement(By.xpath("/html/body/form/table/tbody/tr[2]/td[2]/input")).sendKeys("ebEZAqy");
-        driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td[2]/input[1]")).click();
         System.out.println("Hello, World!");
-
+        driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td[2]/input[1]")).click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Hello, World!");
         menu();
         System.out.println("Hello, World!");
     }
 
-    static void menu(){
+    static void menu() {
         System.out.println("Hello, World!");
-        driver.findElement(By.xpath("/html/body/div[3]/div/ul/li[2]")).click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.findElement(By.cssSelector("body > div:nth-child(7) > div > ul > li:nth-child(3)")).click();
         System.out.println("Hello, World!");
         testcase1();
     }
 
-    static void testcase1(){
-        driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td[2]/input")).sendKeys("Shaikh Mohammad");
+    static void testcase1() {
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      driver.findElement(By.cssSelector("body > div:nth-child(5) > table > tbody > tr > td > table > tbody > tr:nth-child(6) > td:nth-child(2) > input[type=text]")).sendKeys("Shaikh Mohammad");
     }
 
     public static void main(String[] args) {
@@ -41,6 +46,6 @@ public class Main {
         driver();
         browser_link();
         login();
-       driver.quit();
+
     }
 }
