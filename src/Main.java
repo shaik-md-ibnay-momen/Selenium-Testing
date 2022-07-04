@@ -38,7 +38,7 @@ public class Main {
 
     static void testcase1() {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-      driver.findElement(By.cssSelector("body > div:nth-child(5) > table > tbody > tr > td > table > tbody > tr:nth-child(6) > td:nth-child(2) > input[type=text]")).sendKeys("Shaikh Mohammad");
+        driver.findElement(By.cssSelector("body > div:nth-child(5) > table > tbody > tr > td > table > tbody > tr:nth-child(6) > td:nth-child(2) > input[type=text]")).sendKeys("Shaikh Mohammad");
     }
 
     public static void main(String[] args) {
